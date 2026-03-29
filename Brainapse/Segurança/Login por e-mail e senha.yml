@@ -1,0 +1,36 @@
+info:
+  name: Login por e-mail e senha.
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{url}}/auth/login"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "username": "{{email}}",
+          "password": "{{password}}"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const jsonData = res.getBody();
+        bru.setEnvVar("access_token", jsonData.access_token);
+
+        if (jsonData.refresh_token) {
+            bru.setEnvVar("refresh_token", jsonData.refresh_token);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

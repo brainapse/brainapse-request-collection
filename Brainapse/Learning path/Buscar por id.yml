@@ -1,0 +1,20 @@
+info:
+  name: Buscar por id
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{url}}/learningpath/getbyid/a96d6920-8f1e-4701-bd9d-72f73d706d98"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: Content-Type
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

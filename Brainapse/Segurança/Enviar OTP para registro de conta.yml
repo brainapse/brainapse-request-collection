@@ -1,0 +1,25 @@
+info:
+  name: Enviar OTP para registro de conta
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/auth/send_otp_for_registration"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "Silvio",
+          "email": "anderson.santos.gusmao@gmail.com"
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

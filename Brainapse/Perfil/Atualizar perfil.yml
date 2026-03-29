@@ -1,0 +1,42 @@
+info:
+  name: Atualizar perfil
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{url}}/home/user_profile"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "firstName": "And",
+          "lastName": "Gushand",
+          "phoneNumber": "+5511999999999",
+          "birthDate": "1990-01-01T00:00:00Z",
+          "notificationId": null,
+          "address": {
+            "street": "Rua das Flores",
+            "number": "123",
+            "complement": "Apto 101",
+            "neighborhood": "Centro",
+            "city": "São Paulo",
+            "state": "SP",
+            "stateName": "São Paulo",
+            "zipCode": "01001-000",
+            "country": "Brasil",
+            "countryCode": "BR"
+          }
+        }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

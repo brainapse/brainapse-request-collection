@@ -1,0 +1,43 @@
+info:
+  name: Enviar quiz
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{url}}/quiz/submissions"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      [
+          {
+            "id": "id_da_pergunta_1",
+            "correctAnswer": true,
+            "subject": "Matemática",
+            "theme": "Álgebra",
+            "subTheme": "Equações",
+            "difficulty": "easy",
+            "time": "30s"
+          },
+          {
+            "id": "id_da_pergunta_2",
+            "correctAnswer": false,
+            "subject": "História",
+            "theme": "Brasil Colônia",
+            "subTheme": "Ciclo do Ouro",
+            "difficulty": "medium",
+            "time": "45s"
+          }
+        ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

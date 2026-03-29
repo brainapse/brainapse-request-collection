@@ -1,0 +1,17 @@
+info:
+  name: Deploy
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://api.brainapse.com/deploy/
+  headers:
+    - name: x-webhook-token
+      value: 0a4889b28f33185e812f103a28d5bebcf8f70af8512746a39e62b4c1906fcf22
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

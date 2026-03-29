@@ -1,0 +1,28 @@
+info:
+  name: Enviar notificação
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://{{url}}/notification/send
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "fcmToken": "ducaQaE5TKSAjPkv-Pvveh:APA91bHnb9hvxloDghXcCCZQpyW22Qu2iZVylEvXbHOsSyf9G_-i331YjIGCNzKbkJfl_qfmTxmMJyMPyKdzFe-eFoTirn2Xn0RDrjOF63r0F1gbQLGiK6c",
+          "title": "Título da Notificação",
+          "body": "Conteúdo da mensagem"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

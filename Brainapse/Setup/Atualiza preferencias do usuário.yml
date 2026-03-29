@@ -1,0 +1,30 @@
+info:
+  name: Atualiza preferencias do usuário
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{url}}/setup/preferences"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "mainGoal": 1,
+          "selfKnowledge": 1,
+          "timeCommitment": 1,
+          "focusSubject": 1,
+          "learningStyle": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
