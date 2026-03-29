@@ -1,0 +1,27 @@
+info:
+  name: Salvar content Id
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{url}}/learningpath/history/content"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{access_token}}
+  body:
+    type: json
+    data: |-
+      {
+        "learning_path_id": "ad2c10f3-b697-422d-a207-acd65c11a7a4",
+        "content_id": "ad2c10f3-b697-422d-a207-acd65c11a7a4"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
