@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{url}}/learningpath/getbyid/a96d6920-8f1e-4701-bd9d-72f73d706d98"
+  url: "{{url}}/learningpath/getbyid/9ecffe5c-2bdb-4837-800f-66b86d699354"
   headers:
     - name: Authorization
       value: Bearer {{access_token}}
