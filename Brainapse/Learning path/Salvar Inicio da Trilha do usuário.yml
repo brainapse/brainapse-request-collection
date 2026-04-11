@@ -15,7 +15,7 @@ http:
     type: json
     data: |-
       {
-          "learning_path_id": "8ca8f079-bbac-4af2-b4b9-b10328074f24"
+          "learning_path_id": "9ecffe5c-2bdb-4837-800f-66b86d699354"
       }
   auth: inherit
 
