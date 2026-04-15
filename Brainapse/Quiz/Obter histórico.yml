@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{url}}/quiz/history?page=1&size=2"
+  url: "{{url}}/quiz/history?page=1&size=4"
   headers:
     - name: Authorization
       value: Bearer {{access_token}}
@@ -14,7 +14,7 @@ http:
       value: "1"
       type: query
     - name: size
-      value: "2"
+      value: "4"
       type: query
   auth: inherit
 

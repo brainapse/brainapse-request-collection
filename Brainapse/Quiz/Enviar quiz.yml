@@ -13,8 +13,10 @@ http:
       value: application/json
   body:
     type: json
-    data: |-
-      [
+    data: |
+      {
+        "submissionId": "2a772c2d-f765-41de-b6a4-d587dc57857d",
+        "answers": [
           {
             "id": "id_da_pergunta_1",
             "correctAnswer": true,
@@ -34,6 +36,7 @@ http:
             "time": "45s"
           }
         ]
+      }
   auth: inherit
 
 settings:
