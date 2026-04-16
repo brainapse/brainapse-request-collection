@@ -1,0 +1,20 @@
+info:
+  name: Resume Quiz
+  type: http
+  seq: 4
+
+http:
+  method: get
+  url: "{{url}}/quiz/resume/a929fc25-582c-4f9d-b9eb-c76fa0b1596b"
+  headers:
+    - name: Authorization
+      value: Bearer {{access_token}}
+    - name: Content-Type
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: false
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
